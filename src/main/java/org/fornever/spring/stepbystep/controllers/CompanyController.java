@@ -34,22 +34,22 @@ public class CompanyController {
 	/**
 	 * Complex payload
 	 * 
-	 * {
-	 *		"companyName":"hello",
-	 *		"companyDesc": "some thing",
-	 *		"products": [
-	 *			{
-	 *				"productName":"p1",
-	 *				"productDesc":"desc1"
-	 *			},	{
-	 *				"productName":"p1",
-	 *				"productDesc":"desc1"
-	 *			},	{
-	 *				"productName":"p1",
-	 *				"productDesc":"desc1"
-	 *			}
-	 *		]
-	 *	}
+		{
+			"companyName":"hello",
+			"companyDesc": "some thing",
+			"products": [
+				{
+					"productName":"p1",
+					"productDesc":"desc1"
+				},	{
+					"productName":"p1",
+					"productDesc":"desc1"
+				},	{
+					"productName":"p1",
+					"productDesc":"desc1"
+				}
+			]
+		}
 	 * 
 	 */
 
