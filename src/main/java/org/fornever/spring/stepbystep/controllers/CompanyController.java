@@ -1,8 +1,12 @@
 package org.fornever.spring.stepbystep.controllers;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.fornever.spring.stepbystep.models.Company;
 import org.fornever.spring.stepbystep.repos.CompanyRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,17 +28,36 @@ public class CompanyController {
 	 *	Content-Type: application/json
 	 *	Cache-Control: no-cache
 	 *	
-	 *	{
+	 *	{ "companyName":"hello", "companyDesc":"some thing" }
+	 */
+	
+	/**
+	 * Complex payload
+	 * 
+	 * {
 	 *		"companyName":"hello",
-	 *		"companyDesc": "some thing"
+	 *		"companyDesc": "some thing",
+	 *		"products": [
+	 *			{
+	 *				"productName":"p1",
+	 *				"productDesc":"desc1"
+	 *			},	{
+	 *				"productName":"p1",
+	 *				"productDesc":"desc1"
+	 *			},	{
+	 *				"productName":"p1",
+	 *				"productDesc":"desc1"
+	 *			}
+	 *		]
 	 *	}
+	 * 
 	 */
 
 	@PostMapping
 	public Object create(@RequestBody Company company) {
 		return companyRepo.save(company);
 	}
-	
+
 	@GetMapping
 	public Object listall() {
 		return companyRepo.findAll();

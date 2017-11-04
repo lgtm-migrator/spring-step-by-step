@@ -19,6 +19,7 @@ public class AnotherController {
 
 	@GetMapping("/iwantjson")
 	public Object iwantjson() {
+		// return a hashmap
 		return new HashMap<String, String>() {
 			{
 				put("hello", "json");
