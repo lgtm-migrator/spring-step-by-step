@@ -5,6 +5,7 @@ import javax.persistence.PersistenceContext;
 
 import org.fornever.spring.stepbystep.models.Company;
 import org.fornever.spring.stepbystep.repos.CompanyRepo;
+import org.fornever.spring.stepbystep.services.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -57,7 +58,15 @@ public class CompanyController {
 	public Object create(@RequestBody Company company) {
 		return companyRepo.save(company);
 	}
-
+	
+	@Autowired
+	CompanyService companyService;
+	
+	@PostMapping("/check")
+	public Object createWithCheck(@RequestBody Company company) {
+		return companyService.saveWithCheck(company); 
+	}
+	
 	@GetMapping
 	public Object listall() {
 		return companyRepo.findAll();
