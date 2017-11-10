@@ -1,13 +1,9 @@
 package org.fornever.spring.stepbystep.controllers;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
 import org.fornever.spring.stepbystep.models.Company;
 import org.fornever.spring.stepbystep.repos.CompanyRepo;
 import org.fornever.spring.stepbystep.services.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
